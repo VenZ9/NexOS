@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NexOS</string>
+    <string name="file_manager">File Manager</string>
+    <string name="text_editor">Text Editor</string>
+    <string name="settings">Settings</string>
+    <string name="app_library">App Library</string>
+    <string name="system_info">System Information</string>
+    <string name="runtime_manager">Runtime Manager</string>
+    <string name="about_nexos">About NexOS</string>
+</resources>
