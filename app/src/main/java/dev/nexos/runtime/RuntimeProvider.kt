@@ -9,8 +9,8 @@ import kotlinx.coroutines.flow.asStateFlow
 
 class RuntimeProvider(private val context: Context) {
 
-    private val realRuntime: RealWindowsRuntime by lazy { RealWindowsRuntime(context) }
-    private val mockRuntime: MockWindowsRuntime by lazy { MockWindowsRuntime() }
+    val realRuntime: RealWindowsRuntime by lazy { RealWindowsRuntime(context) }
+    val mockRuntime: MockWindowsRuntime by lazy { MockWindowsRuntime() }
 
     private val _activeRuntime = MutableStateFlow<WindowsRuntime>(realRuntime)
     val activeRuntime: StateFlow<WindowsRuntime> = _activeRuntime.asStateFlow()
@@ -22,7 +22,4 @@ class RuntimeProvider(private val context: Context) {
             _activeRuntime.value = realRuntime
         }
     }
-
-    fun getRealRuntime(): RealWindowsRuntime = realRuntime
-    fun getMockRuntime(): MockWindowsRuntime = mockRuntime
 }
