@@ -57,7 +57,8 @@ class PeFileInspectorTest {
 
     @Test
     fun testInspectStream_rejectsNonPeFile() = runBlocking {
-        val nonPeBuffer = "Hello, world! This is a simple text file, not a Windows binary.".toByteArray()
+        val nonPeText = "Hello, world! This is a simple text file that contains more than sixty-four bytes of ASCII text, so it passes the minimum size threshold and tests the MZ signature check."
+        val nonPeBuffer = nonPeText.toByteArray()
         val inputStream = ByteArrayInputStream(nonPeBuffer)
         val result = PeFileInspector.inspectStream(inputStream, totalSize = nonPeBuffer.size.toLong())
 
