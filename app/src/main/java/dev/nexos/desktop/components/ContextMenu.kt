@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -34,7 +35,7 @@ import dev.nexos.ui.theme.TextPrimaryDark
 import kotlin.math.roundToInt
 
 data class ContextMenuItem(
-    val title: String,
+    val title: String = "",
     val icon: ImageVector? = null,
     val isDivider: Boolean = false,
     val onClick: () -> Unit = {}
